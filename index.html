@@ -1,75 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
-    <style>
-        /* body {
-            font: 100% Lucida Sans, Verdana;
-            margin: 20px;
-            line-height: 26px;
-        }
-
-        .contaniner {
-            xmin-width: 900px;
-        }
-        .wrapper {
-            position: relative;
-            overflow: auto;
-        }
-
-#top, #sidebar, #bottom, .menuitem{
-    border-radius: 4px;
-    margin: 4px;
-}
-    #top {
-        background-color: #4CAF50;
-        color: #ffffff;
-        padding: 15px;
-    }
-    #menubar {
-        width: 200px;
-        float: left;
-    }
-    #main {
-
-    } */
-    </style>
-    <style></style>
-    <style></style>
-    <style></style>
-<!-- /* Stylesheets 1: */ -->
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style_index.css">
+    <title>환자 목록</title>
 </head>
- 
 <body>
-    <div class="container wrapper">
-        <div id = "top">
-            <h1>"Welcome to zzanmi Hompage"</h1>
-            <p>Use the menu to select diffrent Stylesheets</p>
+    <h1>환자 목록</h1>
+
+    <div class="patient-list">
+        <!-- 첫 번째 환자 정보 -->
+        <div class="patient">
+            <h2>환자 1</h2>
+            <p><strong>이름:</strong> 홍길동</p>
+            <p><strong>성별:</strong> 남성</p>
+            <p><strong>생년월일:</strong> 1990-01-15</p>
+            <p><strong>연락처:</strong> 123-456-7890</p>
         </div>
-        <div class = "wrapper">
-            <div id = "menubar">
-                <ul id = "menulist">
-                    <li class="menuitem" onclick="reStyle(0)">Stylesheets1</li>
-                    <li class="menuitem" onclick="reStyle(1)">Stylesheets2</li>
-                    <li class="menuitem" onclick="reStyle(2)">Stylesheets3</li>
-                    <li class="menuitem" onclick="reStyle(3)">Stylesheets4</li>
-                    <li class="menuitem" onclick="noStyle()">No Stylesheets5</li>
-                </ul>
-            </div>
-            <div id = "main">
-                <h1>Same Page Diffrent Stylesheets </h1>
-                <p></p>
-                <h2>No Styles</h2>
-                <p></p>
-            </div>
-            <div id = "sidebar">
-                <!-- <h3>Side-Bar</h3> -->
-                <p></p>
-            </div>
-          <div id = "bottom"></div>
-     </div>
-    </body>
+
+        <!-- 두 번째 환자 정보 -->
+        <div class="patient">
+            <h2>환자 2</h2>
+            <p><strong>이름:</strong> 이순신</p>
+            <p><strong>성별:</strong> 남성</p>
+            <p><strong>생년월일:</strong> 1985-03-10</p>
+            <p><strong>연락처:</strong> 987-654-3210</p>
+        </div>
+        
+        <!-- 세 번째 환자 정보 -->
+        <div class="patient">
+            <h2>환자 3</h2>
+            <p><strong>이름:</strong> 신사임당</p>
+            <p><strong>성별:</strong> 여성</p>
+            <p><strong>생년월일:</strong> 1975-12-05</p>
+            <p><strong>연락처:</strong> 555-123-4567</p>
+        </div>
+    </div>
+</body>
 </html>
