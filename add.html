@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style_add.css">
-    <title>환자 추가</title>
+    <title>환자 정보 추가</title>
 </head>
 <body>
-    <h1>환자 추가</h1>
+    <h1>환자 정보 추가</h1>
 
-    <form id="patient-form" action="submit_patient.php" method="POST">
+    <form id="patient-form">
         <label for="name">이름:</label>
         <input type="text" id="name" name="name" required>
-        <br>
-
+        
         <label for="gender">성별:</label>
-        <input type="radio" id="gender-male" name="gender" value="남성" required>
-        <label for="gender-male">남성</label>
-        <input type="radio" id="gender-female" name="gender" value="여성" required>
-        <label for="gender-female">여성</label>
-        <br>
-
-        <label for="birthdate">생년월일:</label>
-        <input type="date" id="birthdate" name="birthdate" required>
-        <br>
-
+        <select id="gender" name="gender" required>
+            <option value="남성">남성</option>
+            <option value="여성">여성</option>
+        </select>
+        
+        <label for="dob">생년월일:</label>
+        <input type="date" id="dob" name="dob" required>
+        
         <label for="contact">연락처:</label>
         <input type="tel" id="contact" name="contact" required>
-        <br>
-
-        <input type="submit" value="추가">
+        
+        <button type="submit">추가</button>
     </form>
+
+    <script>
+        document.getElementById('patient-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            alert('환자 정보가 추가됩니다');
+        });
+    </script>
 </body>
 </html>
