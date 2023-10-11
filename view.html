@@ -1,35 +1,54 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style_view.css">
-        <title>레코드 상세 정보</title>
-    </head>
-    <body>
-        <h1>레코드 상세 정보</h1>
-    
-        <div id="record-details">
-            <h2>환자 이름: <span id="patient-name"></span></h2>
-            <p>성별: <span id="gender"></span></p>
-            <p>생년월일: <span id="dob"></span></p>
-            <p>연락처: <span id="contact"></span></p>
-        </div>
-    
-        <button id="edit-button">Edit</button>
-        <button id="delete-button">Delete</button>
-    
-        <script>
-            // URL에서 파라미터(name) 읽어오기
-            const urlParams = new URLSearchParams(window.location.search);
-            const patientName = urlParams.get('name');
-    
-            // 환자 이름 표시
-            document.getElementById('patient-name').textContent = patientName;
-            // 나머지 환자 정보 표시
-    
-            // 나머지 코드 (수정 및 삭제 버튼)은 위의 예제와 동일하게 작성
-        </script>
-    </body>
-    </html>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_view.css">
+    <title>레코드 상세 정보</title>
+</head>
+<body>
+    <h1>레코드 상세 정보</h1>
+
+    <div id="record-details">
+        <h2>환자 이름: <span id="patient-name"></span></h2>
+        <p>성별: <span id="gender"></span></p>
+        <p>생년월일: <span id="dob"></span></p>
+        <p>연락처: <span id="contact"></span></p>
+    </div>
+
+    <button id="edit-button">Edit</button>
+    <button id="delete-button">Delete</button>
+
+    <script>
+        // URL에서 파라미터(name, gender, dob, contact) 읽어오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const patientName = urlParams.get('name');
+        const gender = urlParams.get('gender');
+        const dob = urlParams.get('dob');
+        const contact = urlParams.get('contact');
+
+        // 환자 정보 표시
+        document.getElementById('patient-name').textContent = patientName;
+        document.getElementById('gender').textContent = gender;
+        document.getElementById('dob').textContent = dob;
+        document.getElementById('contact').textContent = contact;
+
+        // 수정 버튼 클릭 시 실행되는 함수
+        document.getElementById('edit-button').addEventListener('click', function () {
+            // 수정 버튼을 클릭했을 때 실행할 동작을 정의합니다.
+            alert("환자 " + patientName + " 정보를 수정합니다.");
+            // 수정 페이지로 이동할 수 있는 코드를 추가할 수 있습니다.
+            // 예를 들어:
+            // location.href = "edit.html?name=" + patientName;
+        });
+
+        // 삭제 버튼 클릭 시 실행되는 함수
+        document.getElementById('delete-button').addEventListener('click', function () {
+            // 삭제 버튼을 클릭했을 때 실행할 동작을 정의합니다.
+            if (confirm("환자 " + patientName + " 정보를 삭제할까요?")) {
+                alert("환자 " + patientName + " 정보가 삭제되었습니다.");
+                // 삭제할 때 필요한 코드를 추가할 수 있습니다.
+            }
+        });
+    </script>
+</body>
+</html>
