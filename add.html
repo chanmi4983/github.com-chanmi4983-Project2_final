@@ -30,11 +30,28 @@
 
     <script>
         document.getElementById('patient-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-
-            alert('환자 정보가 추가됩니다');
+            // 폼이 제출될 때 유효성 검사 수행
+            if (!validateForm()) {
+                event.preventDefault(); // 유효성 검사 실패 시 폼 제출을 막습니다.
+            }
         });
+
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var gender = document.getElementById('gender').value;
+            var dob = document.getElementById('dob').value;
+            var contact = document.getElementById('contact').value;
+
+            if (name === "" || gender === "" || dob === "" || contact === "") {
+                alert('모든 필수 항목을 입력하세요.');
+                return false; // 유효성 검사 실패
+            }
+
+            // 추가적인 유효성 검사 규칙을 이곳에 추가할 수 있습니다.
+            // 예를 들어, 연락처 형식 검사 등을 수행할 수 있습니다.
+
+            return true; // 유효성 검사 통과
+        }
     </script>
 </body>
 </html>
