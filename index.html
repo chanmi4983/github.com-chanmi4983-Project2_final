@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style_index.css">
+        <link rel="stylesheet" type="text/css" href="my.css">
         <title>환자 목록</title>
     </head>
 <body>
@@ -18,7 +19,7 @@
             <th>작업</th>
         </tr>
         <tr class="patient">
-            <td>나찬미</td>
+            <td><a href="view.html?name=나찬미&gender=여성&dob=1995-04-20&contact=111-222-3333">나찬미</a></td>
             <td>여성</td>
             <td>1995-04-20</td>
             <td>111-222-3333</td>
@@ -28,7 +29,7 @@
             </td>
         </tr>
         <tr class="patient">
-            <td>장재윤</td>
+            <td><a href="view.html?name=장재윤&gender=남성&dob=1990-07-15&contact=444-555-6666">장재윤</a></td>
             <td>남성</td>
             <td>1990-07-15</td>
             <td>444-555-6666</td>
@@ -38,8 +39,7 @@
             </td>
         </tr>
         <tr class="patient">
-            <td><a href="view.html?name=정지호">상세 정보 보기</a></td>
-            <td>정지호</td>
+            <td><a href="view.html?name=정지호&gender=남성&dob=1988-11-30&contact=777-888-9999">정지호</a></td>
             <td>남성</td>
             <td>1988-11-30</td>
             <td>777-888-9999</td>
@@ -49,8 +49,7 @@
             </td>
         </tr>
         <tr class="patient">
-            <td><a href="view.html?name=한예령">상세 정보 보기</a></td>
-            <td>한예령</td>
+            <td><a href="view.html?name=한예령&gender=여성&dob=1993-05-25&contact=123-456-7890">한예령</a></td>
             <td>여성</td>
             <td>1993-05-25</td>
             <td>123-456-7890</td>
@@ -60,21 +59,8 @@
             </td>
         </tr>
 
-        <!-- 각 레코드에 링크 추가 -->
-        <tr class="patient">
-            <td><a href="view.html?name=나찬미">상세 정보 보기</a></td>
-            <td>여성</td>
-            <td>1995-04-20</td>
-            <td>111-222-3333</td>
-            <td>
-                <button onclick="editPatient('나찬미')">수정</button>
-                <button onclick="deletePatient('나찬미')">삭제</button>
-            </td>
-        </tr>
-        
-        <!-- 다른 환자 정보도 동일한 형식으로 추가할 수 있습니다 -->
     </table>
-    
+
     <script>
         // 수정 버튼을 눌렀을 때 호출되는 함수
         function editPatient(patientName) {
