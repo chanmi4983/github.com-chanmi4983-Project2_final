@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_edit.css">
+    <title>레코드 수정</title>
+</head>
+<body>
+    <h1>레코드 수정</h1>
+
+    <form id="record-form">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" value="나찬미" required>
+        
+        <label for="gender">성별:</label>
+        <select id="gender" name="gender" required>
+            <option value="남성">남성</option>
+            <option value="여성" selected>여성</option>
+        </select>
+        
+        <label for="dob">생년월일:</label>
+        <input type="date" id="dob" name="dob" value="1995-04-20" required>
+        
+        <label for="contact">연락처:</label>
+        <input type="tel" id="contact" name="contact" value="111-222-3333" required>
+        
+        <button type="submit" onclick="return confirm('게시물을 수정할까요?')">수정</button>
+    </form>
+
+    <script>
+        document.getElementById('record-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            // 여기에 수정된 데이터를 서버에 보내는 코드를 추가해야 합니다.
+            // 수정된 데이터를 서버에 업데이트하고 사용자에게 성공 메시지를 표시할 수 있습니다.
+            alert('게시물이 수정되었습니다');
+        });
+    </script>
+</body>
+</html>

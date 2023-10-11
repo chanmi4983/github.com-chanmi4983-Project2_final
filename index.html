@@ -77,6 +77,27 @@
                 // 실제 삭제 동작을 수행하려면 서버 또는 데이터베이스와 상호작용해야 합니다.
             }
         }
+
+          // 수정 버튼을 눌렀을 때 호출되는 함수
+    function editPatient(patientName) {
+        // 선택한 환자의 정보를 수정하는 동작을 구현
+        // 예를 들어, 수정 폼을 표시하거나 다른 작업을 수행
+        alert("환자 " + patientName + " 정보를 수정합니다.");
+        
+        // 이부분에 수정 버튼을 눌렀을 때 edit.html로 이동하는 코드를 추가할 수 있습니다.
+        location.href = "edit.html?name=" + patientName;
+    }
+
+    // 삭제 버튼을 눌렀을 때 호출되는 함수
+    function deletePatient(patientName) {
+        // 선택한 환자를 삭제하는 동작을 구현
+        // 사용자에게 삭제 확인 메시지를 표시하고 확인 시 삭제 진행
+        if (confirm("환자 " + patientName + " 정보를 삭제할까요?")) {
+            alert("환자 " + patientName + " 정보가 삭제되었습니다.");
+            // 실제 삭제 동작을 수행하려면 서버 또는 데이터베이스와 상호작용해야 합니다.
+        }
+    }
+        
     </script>
 
         <a href="add.html" class="add-button">Add</a>
