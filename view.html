@@ -1,0 +1,35 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style_view.css">
+        <title>레코드 상세 정보</title>
+    </head>
+    <body>
+        <h1>레코드 상세 정보</h1>
+    
+        <div id="record-details">
+            <h2>환자 이름: <span id="patient-name"></span></h2>
+            <p>성별: <span id="gender"></span></p>
+            <p>생년월일: <span id="dob"></span></p>
+            <p>연락처: <span id="contact"></span></p>
+        </div>
+    
+        <button id="edit-button">Edit</button>
+        <button id="delete-button">Delete</button>
+    
+        <script>
+            // URL에서 파라미터(name) 읽어오기
+            const urlParams = new URLSearchParams(window.location.search);
+            const patientName = urlParams.get('name');
+    
+            // 환자 이름 표시
+            document.getElementById('patient-name').textContent = patientName;
+            // 나머지 환자 정보 표시
+    
+            // 나머지 코드 (수정 및 삭제 버튼)은 위의 예제와 동일하게 작성
+        </script>
+    </body>
+    </html>
+    </html>
