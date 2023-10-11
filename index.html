@@ -15,26 +15,68 @@
             <th>성별</th>
             <th>생년월일</th>
             <th>연락처</th>
+            <th>작업</th>
         </tr>
         <tr class="patient">
-            <td>홍길동</td>
+            <td>나찬미</td> <!-- 환자 이름 변경 -->
+            <td>여성</td> <!-- 성별 변경 -->
+            <td>1995-04-20</td> <!-- 생년월일 변경 -->
+            <td>111-222-3333</td> <!-- 연락처 변경 -->
+            <td>
+                <button onclick="editPatient('나찬미')">수정</button>
+                <button onclick="deletePatient('나찬미')">삭제</button>
+            </td>
+        </tr>
+        <tr class="patient">
+            <td>장재윤</td> <!-- 환자 이름 변경 -->
             <td>남성</td>
-            <td>1990-01-15</td>
-            <td>123-456-7890</td>
+            <td>1990-07-15</td>
+            <td>444-555-6666</td>
+            <td>
+                <button onclick="editPatient('장재윤')">수정</button>
+                <button onclick="deletePatient('장재윤')">삭제</button>
+            </td>
         </tr>
         <tr class="patient">
-            <td>이순신</td>
+            <td>정지호</td> <!-- 환자 이름 변경 -->
             <td>남성</td>
-            <td>1985-03-10</td>
-            <td>987-654-3210</td>
+            <td>1988-11-30</td> <!-- 생년월일 변경 -->
+            <td>777-888-9999</td> <!-- 연락처 변경 -->
+            <td>
+                <button onclick="editPatient('정지호')">수정</button>
+                <button onclick="deletePatient('정지호')">삭제</button>
+            </td>
         </tr>
         <tr class="patient">
-            <td>신사임당</td>
+            <td>한예령</td> <!-- 환자 이름 변경 -->
             <td>여성</td>
-            <td>1975-12-05</td>
-            <td>555-123-4567</td>
+            <td>1993-05-25</td>
+            <td>123-456-7890</td>
+            <td>
+                <button onclick="editPatient('한예령')">수정</button>
+                <button onclick="deletePatient('한예령')">삭제</button>
+            </td>
         </tr>
         <!-- 다른 환자 정보도 동일한 형식으로 추가할 수 있습니다 -->
     </table>
+    
+    <script>
+        // 수정 버튼을 눌렀을 때 호출되는 함수
+        function editPatient(patientName) {
+            // 선택한 환자의 정보를 수정하는 동작을 구현
+            // 예를 들어, 수정 폼을 표시하거나 다른 작업을 수행
+            alert("환자 " + patientName + " 정보를 수정합니다.");
+        }
+
+        // 삭제 버튼을 눌렀을 때 호출되는 함수
+        function deletePatient(patientName) {
+            // 선택한 환자를 삭제하는 동작을 구현
+            // 사용자에게 삭제 확인 메시지를 표시하고 확인 시 삭제 진행
+            if (confirm("환자 " + patientName + " 정보를 삭제할까요?")) {
+                alert("환자 " + patientName + " 정보가 삭제되었습니다.");
+                // 실제 삭제 동작을 수행하려면 서버 또는 데이터베이스와 상호작용해야 합니다.
+            }
+        }
+    </script>
 </body>
 </html>
